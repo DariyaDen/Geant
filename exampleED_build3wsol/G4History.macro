@@ -1,0 +1,18 @@
+/run/verbose 2
+/run/initialize
+/control/execute vis.mac
+/vis/open OGL 600x600-0+0
+/vis/sceneHandler/create OGL
+/vis/open TSG_OFFSCREEN 800x600-0+0
+/vis/sceneHandler/create TSG_OFFSCREEN
+/vis/viewer/create ! ! 800x600-0+0
+/vis/open TSG_FILE 800x600 myScene
+/vis/sceneHandler/create TSG_FILE
+/vis/viewer/create ! ! 800x600
+/vis/drawVolume
+/vis/scene/create
+/vis/scene/add/volume world -1 -1 none m 0 0 0 0 0 0
+/vis/sceneHandler/attach
+/vis/viewer/flush
+/vis/viewer/refresh viewer-1
+/vis/viewer/update viewer-1
